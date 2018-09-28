@@ -1,0 +1,12 @@
+linux下常用解压命令：
+    1 解压tar.gz文件：tar -zxvf xxx.tar.gz
+      解压tar.bz2文件：tar -jxvf xxx.tar.bz2
+      -z:是否同时具有gzip属性，即是否需要gzip压缩
+      -j:是否同时具有bzip2属性，即是否需要bzip2压缩
+      解压zip：unzip xxx.zip 压缩zip zip -r xxx
+
+    2 日志查看方法：
+      cat -n test.log |grep 'debug' ：得到关键日志的行号
+      cat -n test.log | tail -n +92 | head -n 20 选择关键字所在的中间行，然后查看这个关键字前10行和后10行的日志
+        tail -n +92 :表示查询92行以后的日志
+        head -n 20 :表示在前面的查询结果里再查找前20条记录

@@ -1,0 +1,20 @@
+1 assert
+  用法：assert expression1,expression2
+  1) assert expression  等价与  if __dubug__:
+                                  if not expression1:
+                                      raise AssertionError
+  2) assert expression  等价与  if __dubug__:
+                                  if not expression1:
+                                      raise AssertionError(expression2)
+  其中__debug__为python中的内建变量(给__debug__赋值时非法的)，普通情况下为Ture，只有在程序执行在优化模式下时为False（优化模式执行命令为加 -O）
+  需要注意的是，我们并不需要手动在错误信息中加入assert后被检测的expression的代码，这些代码会自动显示在出错的堆栈信息中
+
+  注意：
+  assert与print是不同的。print()可以正常工作，但assert()是错误的。这是因为print()是一个python内建方法而assert()不是。看如下例子：
+  assert(2 + 2' == 5, "Oops something went wrong.")是错误的。
+  assert 2 + 2 == 5, "Oops something went wrong."是正确的。
+  其中第一条代码错误的原因是：根据assert的意义，程序将会检测assert后面的expression的值，也就是bol((2 + 2 == 5, "Oops something went wrong."))。而Python中一个非空元组的布尔值是True。
+  再比如assert(False)。当()出现在assert后面时，Python编译器会认为assert后面的输入是一个元组。而一个非空元组的布尔值总为True。因此assert()并不能正常工作。
+
+  2 装饰器学习
+
