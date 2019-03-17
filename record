@@ -16,4 +16,4 @@
   其中第一条代码错误的原因是：根据assert的意义，程序将会检测assert后面的expression的值，也就是bol((2 + 2 == 5, "Oops something went wrong."))。而Python中一个非空元组的布尔值是True。
   再比如assert(False)。当()出现在assert后面时，Python编译器会认为assert后面的输入是一个元组。而一个非空元组的布尔值总为True。因此assert()并不能正常工作。
   
-  2 装饰器学习
+2 装饰器学习
