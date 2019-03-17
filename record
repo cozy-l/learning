@@ -17,3 +17,4 @@
   再比如assert(False)。当()出现在assert后面时，Python编译器会认为assert后面的输入是一个元组。而一个非空元组的布尔值总为True。因此assert()并不能正常工作。
   
 2 装饰器学习
+3
